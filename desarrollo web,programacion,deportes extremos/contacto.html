@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contacto | Desarrollo y Deportes Extremos</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">FutureWeb</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu7">
+      <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu7">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="desarrollo.html">Desarrollo Web</a></li>
+        <li class="nav-item"><a class="nav-link" href="programacion.html">Programación</a></li>
+        <li class="nav-item"><a class="nav-link" href="deportes.html">Deportes Extremos</a></li>
+        <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container mt-5 pt-4">
+  <h2 class="title-neon mb-3">Contacto</h2>
+  <p class="text-muted">¿Tienes una idea o quieres colaborar? Escríbeme.</p>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card p-4 fade-in">
+        <form id="contactForm" novalidate>
+          <div class="mb-3">
+            <label for="name" class="form-label">Nombre completo</label>
+            <input type="text" id="name" name="name" class="form-control" required minlength="2" placeholder="Tu nombre">
+            <div class="invalid-feedback">Por favor ingresa tu nombre (mínimo 2 caracteres).</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" id="email" name="email" class="form-control" required placeholder="tucorreo@ejemplo.com">
+            <div class="invalid-feedback">Introduce un correo válido.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="phone" class="form-label">Teléfono (opcional)</label>
+            <input type="tel" id="phone" name="phone" class="form-control" pattern="[0-9]{7,15}" placeholder="Solo números">
+            <div class="invalid-feedback">Introduce solo números (7-15 dígitos).</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Mensaje</label>
+            <textarea id="message" name="message" class="form-control" rows="4" required minlength="10" placeholder="Tu mensaje..."></textarea>
+            <div class="invalid-feedback">El mensaje debe tener al menos 10 caracteres.</div>
+          </div>
+
+          <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+        <div id="formAlert" class="mt-3" style="display:none;"></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card p-3 fade-in">
+        <h6>Contacto rápido</h6>
+        <p class="small mb-0">Email: contacto@futureweb.example</p>
+        <p class="small">Ubicación: Ciudad, País</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="container">
+  <hr class="mt-4" /><p class="small">FutureWeb © 2025</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Validación básica usando API de Constraint Validation + Bootstrap styles
+  (function(){
+    const form = document.getElementById('contactForm');
+    const alertBox = document.getElementById('formAlert');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!form.checkValidity()){
+        form.classList.add('was-validated');
+        return;
+      }
+      // Simular envío y mostrar confirmación (no hay backend)
+      alertBox.style.display = 'block';
+      alertBox.className = 'alert alert-success';
+      alertBox.textContent = '¡Gracias! Tu mensaje ha sido recibido (simulado).';
+      form.reset();
+      form.classList.remove('was-validated');
+      // ocultar mensaje luego de unos segundos
+      setTimeout(()=> alertBox.style.display='none', 6000);
+    });
+  })();
+</script>
+
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <p>Sígueme en redes sociales</p>
+    <div class="social-icons d-flex justify-content-center gap-3">
+        <a href="#" class="text-info fs-4" target="_blank">
+            <i class="bi bi-facebook"></i>
+        </a>
+        <a href="#" class="text-info fs-4" target="_blank">
+            <i class="bi bi-instagram"></i>
+        </a>
+        <a href="#" class="text-info fs-4" target="_blank">
+            <i class="bi bi-youtube"></i>
+        </a>
+        <a href="#" class="text-info fs-4" target="_blank">
+            <i class="bi bi-github"></i>
+        </a>
+    </div>
+    <p class="mt-3">© 2025 | Mi Sitio Web de Desarrollo y Deportes Extremos</p>
+</footer>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Desarrollo y Deportes Extremos</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        .btn-custom {
+            transition: 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #00f2ff;
+            transform: scale(1.05);
+            color: black;
+        }
+    </style>
+
+</head>
+<body class="bg-dark text-white">
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">Mi Sitio Web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="desarrollo.html">Desarrollo Web</a></li>
+                    <li class="nav-item"><a class="nav-link" href="programacion.html">Programación</a></li>
+                    <li class="nav-item"><a class="nav-link" href="deportesextremos.html">Deportes Extremos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="acerca.html">Acerca de</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Formulario -->
+    <section class="container py-5">
+        <h1 class="text-center fw-bold mb-4">Formulario de Contacto</h1>
+        <p class="text-center mb-5">Si tienes dudas, propuestas o quieres unirte a esta aventura, escríbeme 👇</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Nombre completo</label>
+                        <input type="text" class="form-control" name="nombre" required maxlength="50">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Correo electrónico</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Mensaje</label>
+                        <textarea class="form-control" name="mensaje" rows="4" maxlength="200" required></textarea>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-info btn-custom px-4 fw-semibold">
+                            Enviar&nbsp; <i class="bi bi-send-fill"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer con Redes Sociales -->
+    <footer class="bg-black text-center text-white py-4 mt-5">
+        <p>Sígueme en redes sociales</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#" class="text-info fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-info fs-4"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-info fs-4"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="text-info fs-4"><i class="bi bi-github"></i></a>
+        </div>
+        <p class="mt-3 mb-0">© 2025 | Sitio Web de Desarrollo y Deportes Extremos</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+    
+</body>
+</html>
